@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 30px;
+            }
+
+
+            img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+            
+        </style>
+        <script>
+            function clearForm() {
+                document.getElementById("submission").reset(); 
+            }
+            function submitForm() {
+                let score = parseInt(sessionStorage.getItem("quantscore"));
+                if (document.getElementById("a").checked) {
+                    score = score + 1;
+                }
+                sessionStorage.setItem("quantscore", String(score));
+                window.location.replace("file:///home/thunderpurtz/Desktop/cmpe280/english.html");
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Question 2
+                    </h2>
+                </div>
+            </header>
+        
+            <span style="display:inline-block; vertical-align: top; width:100%">
+                <p">
+                    Given points (x1, y1) and (x2, y2) select the formula to find the equation of the given line.
+                </p>
+                <form id="submission" style="padding-top: 40px;" method="post">
+                    <div>
+                        <input type="radio" id="a" name="q1" value="">
+                        <label for="a">
+                            <math>
+                                <mrow>
+                                    <mi> cos </mi>
+                                    <mfenced>(</mfenced>
+                                    <mi>α</mi>
+                                    <mo>± </mo>
+                                    <mi>β</mi>
+                                    <mfenced>)</mfenced>
+                                    <mo>=</mo>
+                                    <mi>cos </mi>
+                                    <mi>α</mi>
+                                    <mi>cos </mi>
+                                    <mi>β</mi>
+                                    <mo>∓</mo>
+                                    <mi>sin</mi>
+                                    <mi>α</mi>
+                                    <mi>sin</mi>
+                                    <mi>β</mi>
+                                </mrow>                
+                            </math>
+                        </label>
+                        <input type="radio" id="b" name="q1" value="">
+                        <label for="b">
+                            <math>
+                                <mrow>
+                                    <mi>sin</mi>
+                                    <mfenced>(</mfenced>
+                                    <mi>α</mi>
+                                    <mo>±</mo>
+                                    <mi>β</mi>
+                                    <mfenced>)</mfenced>
+                                    <mo>=</mo>
+                                    <mi>sin</mi>
+                                    <mi>α</mi>
+                                    <mi>cos </mi>
+                                    <mi>β</mi>
+                                    <mo>±</mo>
+                                    <mi>cos</mi>
+                                    <mi>α</mi>
+                                    <mi>sin</mi>
+                                    <mi>β</mi>
+                                </mrow>                
+                            </math>
+                        </label><br><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="c" name="q1" value="">
+                        <label for="c">
+                            <math>
+                                <mrow>
+                                    <mi>sin</mi>
+                                    <mi>α</mi>
+                                    <mo>+</mo>
+                                    <mi>sin</mi>
+                                    <mi>β</mi>
+                                    <mo>=</mo>
+                                    <mn>2</mn>
+                                    <mi>sin</mi>
+                                    <mfenced>(</mfenced>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>α</mi>
+                                            <mo>+</mo>
+                                            <mi>β</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </mfrac>
+                                    <mfenced>)</mfenced>
+                                    <mi>cos </mi>
+                                    <mfenced>(</mfenced>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>α</mi>
+                                            <mo>-</mo>
+                                            <mi>β</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </mfrac>
+                                    <mfenced>)</mfenced>
+                                </mrow>                
+                            </math>
+                        </label>
+                        <input type="radio" id="d" name="q1" value="">
+                        <label for="d">
+                            <math>
+                                <mrow>
+                                    <mi>sin</mi>
+                                    <mi>α</mi>
+                                    <mo>-</mo>
+                                    <mi>sin</mi>
+                                    <mi>β</mi>
+                                    <mo>=</mo>
+                                    <mn>2</mn>
+                                    <mi>cos</mi>
+                                    <mfenced>(</mfenced>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>α</mi>
+                                            <mo>+</mo>
+                                            <mi>β</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </mfrac>
+                                    <mfenced>)</mfenced>
+                                    <mi>sin</mi>
+                                    <mfenced>(</mfenced>
+                                    <mfrac>
+                                        <mrow>
+                                            <mi>α</mi>
+                                            <mo>-</mo>
+                                            <mi>β</mi>
+                                        </mrow>
+                                        <mrow>
+                                            <mn>2</mn>
+                                        </mrow>
+                                    </mfrac>
+                                    <mfenced>)</mfenced>
+                                </mrow>                
+                            </math>
+                        </label>
+                    </div>
+        
+        
+                    <div>
+                        <button type="button" onclick="submitForm()">Submit & Next Question</button>                    
+                        <button type="button" onclick="clearForm()">Cancel & Clear Selection</button>
+                    </div>
+                </form>
+            </span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 45%;
+            border-radius: 30px;
+            }
+
+
+            img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+
+            input::-webkit-calendar-picker-indicator {
+              opacity: 100;
+            }
+            
+        </style>
+        <script>
+            function clearForm() {
+                document.getElementById("submission").reset(); 
+            }
+            function submitForm() {
+                window.location.replace("file:///home/thunderpurtz/Desktop/cmpe280/summary.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Survey
+                    </h2>
+            </div>
+            </header>
+
+        
+            <span style="display:inline-block; vertical-align: top; width:55%">
+                <p>
+                    How did you like the center?
+                </p>
+                <form id="submission" style="padding-top: 10px;" method="post">
+                    <div>
+                        <label style="vertical-align: top;" for="w3review">Comments:</label>
+                        <textarea form="submission" id="w3review" name="w3review" rows="4" cols="50"></textarea>
+                          <br><br>
+                    </div>
+                    <div>
+                        <label for="cities">City:</label>
+                        <select id="city_list">
+                          <option value="San Jose">San Jose</option>   
+                          <option value="Fremont">Fremont</option>   
+                          <option value="Mountain View">Mountain View</option>   
+                          <option value="Palo Alto">Palo Alto</option>   
+                          <option value="Saratoga">Saratoga</option>   
+                          <option value="Milpitas">Milpitas</option>   
+                          </select>
+                        <br>
+                        <label for="rooms">Room #:</label>
+                        <select id="room_list">
+                          <option value="Room 210">Room 210</option>    
+                          <option value="Room 118">Room 118</option>  
+                          <option value="Room 420">Room 420</option>  
+                          <option value="Room 337">Room 337</option>  
+                          <option value="Room 164">Room 164</option>  
+                          <option value="Room 509">Room 509</option>  
+                          </select>
+                    </div>
+        
+        
+                    <div>
+                        <button type="button" onclick="submitForm()">Submit & Get Score</button>                    
+                        <button type="button" onclick="submitForm()">Skip and Get SCore</button>
+                    </div>
+                </form>
+            </span>
+            <!--<iframe style="display:inline-block;" width="560" height="315" src="https://www.youtube.com/embed/ih9jPaZct1w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+            </div>
+    </body>
+</html>

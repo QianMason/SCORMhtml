@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 40%;
+            border-radius: 30px;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+            
+        </style>
+        <script>
+            function clearForm() {
+                document.getElementById("submission").reset(); 
+                document.getElementById("second").style.display = "none";
+                document.getElementById("ans1").innerHTML = "__________";
+                document.getElementById("ans2").innerHTML = "__________";
+            }
+            function option1() {
+                if (document.getElementById("a").checked) {
+                    document.getElementById("ans1").innerHTML = "impose";
+                }
+                if (document.getElementById("b").checked) {
+                    document.getElementById("ans1").innerHTML = "imagine";
+                }
+                if (document.getElementById("c").checked) {
+                    document.getElementById("ans1").innerHTML = "infer";
+                }
+                document.getElementById("second").style.display = "inline-block";
+            }
+            function option2() {
+                if (document.getElementById("a2").checked) {
+                    document.getElementById("ans2").innerHTML = "honest";
+                }
+                if (document.getElementById("b2").checked) {
+                    document.getElementById("ans2").innerHTML = "scandalous";
+                }
+                if (document.getElementById("c2").checked) {
+                    document.getElementById("ans2").innerHTML = "trustworthy";
+                }
+            }
+            function submitForm() {
+                let score = 0;
+                if (document.getElementById("c").checked && document.getElementById("c2").checked) {
+                    score = 1;
+                }
+                sessionStorage.setItem("rscore", String(score));
+                window.location.replace("file:///home/thunderpurtz/Desktop/cmpe280/video.html");
+            }
+        </script>
+    </head>
+    <body onload="clearForm()">
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Question 3
+                    </h2>
+            </div>
+            </header>
+
+        
+            <div style="display:inline-block; vertical-align: top; width:55%">
+                <p">
+                    Fill in the correct words to complete the sentence.
+                </p>
+                <div style="float: right">
+                    <p>Though the attorney did not directly state that the witness was a liar, 
+                        the jury was able to <span><mark id="ans1">__________</mark></span> that the 
+                        witness was not <span><mark id="ans2">__________</mark></span>.
+                    </p>
+                </div>
+                <form id="submission" style="padding-top: 80px;" method="post">
+                    
+                    <div style="display:inline-block">
+                        <span>Option 1:</span><br>
+                        <input onclick="option1()" type="radio" id="a" name="q1" value="">
+                        <label for="a">impose</label><br>
+                        <input onclick="option1()" type="radio" id="b" name="q1" value="">
+                        <label for="b">imagine</label><br>
+                        <input onclick="option1()" type="radio" id="c" name="q1" value="">
+                        <label for="c">infer</label>
+                    </div>
+                    <div style="display:none" id="second">
+                        <span>Option 2:</span><br>
+                        <input onclick="option2()" type="radio" id="a2" name="q2" value="">
+                        <label for="a2">honest</label><br>
+                        <input onclick="option2()" type="radio" id="b2" name="q2" value="">
+                        <label for="b2">scandalous</label><br>
+                        <input onclick="option2()" type="radio" id="c2" name="q2" value="">
+                        <label for="c2">trustworthy</label>
+                    </div>
+        
+        
+                    <div>
+                        <button type="button" style="display:inline-block" onclick="submitForm()">Submit & Next Question</button>                    
+                        <button type="button" style="display:inline-block" onclick="clearForm()">Cancel & Clear Selection</button>
+                    </div>
+                </form>
+            </div>
+
+            <!--<iframe style="display:inline-block;" width="560" height="315" src="https://www.youtube.com/embed/ih9jPaZct1w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+            </div>
+    </body>
+</html>

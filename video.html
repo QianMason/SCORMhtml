@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 30px;
+            }
+
+
+            img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+            
+        </style>
+        <script>
+            function clearForm() {
+                document.getElementById("submission").reset(); 
+            }
+            function submitForm() {
+                let score = 0;
+                if (document.getElementById("a").checked) {
+                    score = 1;
+                }
+                sessionStorage.setItem("avscore", String(score));
+                window.location.replace("file:///home/thunderpurtz/Desktop/cmpe280/survey.html");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Question 4
+                    </h2>
+            </div>
+            </header>
+
+        
+            <span style="display:inline-block; vertical-align: top; width:55%">
+                <p">
+                    Given points (x1, y1) and (x2, y2) select the formula to find the equation of the given line.
+                </p>
+                <form id="submission" style="padding-top: 80px;" method="post">
+                    <div>
+                        <input type="radio" id="a" name="q1" value="">
+                        <label for="a">NASA.Gov</label>
+                        <input type="radio" id="b" name="q1" value="">
+                        <label for="b">Data.Gov</label><br><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="c" name="q1" value="">
+                        <label for="c">Facebook</label>
+                        <input type="radio" id="d" name="q1" value="">
+                        <label for="d">XYZ.net</label>
+                    </div>
+        
+        
+                    <div>
+                        <button type="button" onclick="submitForm()">Submit & Next Question</button>                    
+                        <button type="button" onclick="clearForm()">Cancel & Clear Selection</button>
+                    </div>
+                </form>
+            </span>
+            <video width="320" height="240" controls>
+                <source src="video.mp4" type="video/mp4">
+                <source src="video.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+            </video>
+            <!--<iframe style="display:inline-block;" width="560" height="315" src="https://www.youtube.com/embed/ih9jPaZct1w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+            </div>
+    </body>
+</html>

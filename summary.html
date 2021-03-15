@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 45%;
+            border-radius: 30px;
+            }
+
+
+            img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+
+            input::-webkit-calendar-picker-indicator {
+              opacity: 100;
+            }
+            
+        </style>
+        <script>
+            function finish() {
+                window.location.replace("http://google.com");
+            }
+        </script>
+        <script>
+            function generateScores(){
+                let quantscore = parseInt(sessionStorage.getItem("quantscore"));
+                let rscore = parseInt(sessionStorage.getItem("rscore"));
+                let avscore = parseInt(sessionStorage.getItem("avscore"));
+                document.getElementById("qnumq").innerHTML = "Number of Questions Answered: " + 2;
+                document.getElementById("qnumc").innerHTML = "Number of Correct Answers: " + quantscore;
+                document.getElementById("qscore").innerHTML = "Score: " + String((quantscore / 2 * 100));
+                document.getElementById("rnumq").innerHTML = "Number of Questions Answered: " + 1;
+                document.getElementById("rnumc").innerHTML = "Number of Correct Answers: " + rscore;
+                document.getElementById("rscore").innerHTML = "Score: " + String((rscore / 1 * 100));
+                document.getElementById("avnumq").innerHTML = "Number of Questions Answered: " + 1;
+                document.getElementById("avnumc").innerHTML = "Number of Correct Answers: " + avscore;
+                document.getElementById("avscore").innerHTML = "Score: " + String((avscore / 1 * 100));
+            }
+        </script>
+    </head>
+    <body onload="generateScores()">
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Survey
+                    </h2>
+            </div>
+            </header>
+
+        
+            <span style="display:inline-block; vertical-align: top; width:55%">
+                <details>
+                    <summary>Quantitative Section</summary>
+                    <p id="qnumq"></p>
+                    <p id="qnumc"></p>
+                    <p id="qscore"></p>
+                </details>
+                <details>
+                    <summary>Reading Section</summary>
+                    <p id="rnumq"></p>
+                    <p id="rnumc"></p>
+                    <p id="rscore"></p>
+                </details>
+                <details>
+                    <summary>Audio/Video Section</summary>
+                    <p id="avnumq"></p>
+                    <p id="avnumc"></p>
+                    <p id="avscore"></p>
+                </details>
+                <div style="text-align: center;">             
+                    <button type="button" onclick="finish()">Finish</button>
+                </div>
+            </span>
+            <!--<iframe style="display:inline-block;" width="560" height="315" src="https://www.youtube.com/embed/ih9jPaZct1w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+            
+            </div>
+    </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {font-family: Arial;}
+
+            input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            }
+
+            button {
+            background-color: white;
+            color: black;
+            padding: 7px 10px;
+            margin: 8px 0;
+            margin-right: 20px;
+            border: solid;
+            cursor: pointer;
+            width: 50%;
+            border-radius: 30px;
+            }
+
+
+            img.avatar {
+            width: 40%;
+            border-radius: 50%;
+            }
+
+            .container {
+            padding: 0px 16px 16px 16px;
+            border: solid;
+            }
+
+            span.psw {
+            float: right;
+            padding-top: 16px;
+            }
+            
+        </style>
+        <script>
+            function clearForm() {
+                document.getElementById("submission").reset(); 
+            }
+            function submitForm() {
+                let score = 0;
+                if (document.getElementById("c").checked) {
+                    score = score + 1;
+                }
+                sessionStorage.setItem("quantscore", String(score));
+                window.location.replace("file:///home/thunderpurtz/Desktop/cmpe280/cosine.html");
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="container">
+            <header>
+                <div style="text-align: center;">
+                    <h2>
+                        Question 1
+                    </h2>
+            </div>
+            </header>
+        
+            <span style="display:inline-block; vertical-align: top; width:55%">
+                <p">
+                    Given points (x1, y1) and (x2, y2) select the formula to find the equation of the given line.
+                </p>
+                <form id="submission" style="padding-top: 80px;" method="post">
+                    <div>
+                        <input type="radio" id="a" name="q1" value="">
+                        <label for="a">
+                            <math>
+                                <mrow>
+                                    <mi> y </mi>
+                                    <mo> = </mo>
+                                    <mi> m </mi>
+                                    <mi> x </mi>
+                                    <mo> + </mo>
+                                    <mi> b </mi>
+                                </mrow>                
+                            </math>
+                        </label>
+                        <input type="radio" id="b" name="q1" value="">
+                        <label for="b">
+                            <math>
+                                <mrow>
+                                    <mfenced>(</mfenced>
+                                    <mi> x </mi>
+                                    <mo> - </mo>
+                                    <mi> h </mi>
+                                    <msup>
+                                        <mfenced>)</mfenced>
+                                        <mn>2</mn>
+                                    </msup>
+
+                                    <mo> + </mo>
+                                    <mfenced>(</mfenced>
+                                    <mi> y </mi>
+                                    <mo> - </mo>
+                                    <mi> k </mi>
+                                    <msup>
+                                        <mfenced>)</mfenced>
+                                        <mn>2</mn>
+                                    </msup>
+                                    <mo> = </mo>
+                                    <msup>
+                                        <mi>r</mi>
+                                        <mn>2</mn>
+                                    </msup>
+                                </mrow>          
+                            </math>
+                        </label><br><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="c" name="q1" value="">
+                        <label for="c">
+                            <math>
+                                <mi>y</mi>
+                                <mo>-</mo>
+                                <msub>
+                                <mi>y</mi>
+                                <mn>1</mn>
+                                </msub>
+                                <mo>=</mo>
+                                <mi>m</mi>
+                                <mfenced>(</mfenced>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>1</mn>
+                                </msub>
+                                <mfenced>)</mfenced>
+                            </math>
+                        </label>
+                        <input type="radio" id="d" name="q1" value="">
+                        <label for="d">
+                            <math>
+                                <mi>y</mi>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>y</mi>
+                                    <mn>2</mn>
+                                </msub>
+                                <mo>=</mo>                 
+                                <mfrac>
+                                    <mrow>
+                                        <msub>
+                                            <mi>y</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>-</mo>
+                                        <msub>
+                                        <mi>y</mi>
+                                        <mn>1</mn>
+                                        </msub>
+                                    </mrow>
+                                    <mrow>
+                                        <msub>
+                                            <mi>x</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>-</mo>
+                                        <msub>
+                                        <mi>x</mi>
+                                        <mn>1</mn>
+                                        </msub>
+                                    </mrow>
+                                </mfrac>
+                                <mfenced>(</mfenced>
+                                <mi>x</mi>
+                                <mo>-</mo>
+                                <msub>
+                                    <mi>x</mi>
+                                    <mn>2</mn>
+                                </msub>
+                                <mfenced>)</mfenced>
+                            </math>
+                        </label>
+                    </div>
+        
+        
+                    <div>
+                        <button type="button" onclick="submitForm()">Submit & Next Question</button>                    
+                        <button type="button" onclick="clearForm()">Cancel & Clear Selection</button>
+                    </div>
+                </form>
+            </span>
+            <img style="display:inline-block;" src="cropped.png" alt="problem1image">
+        </div>
+    </body>
+</html>
